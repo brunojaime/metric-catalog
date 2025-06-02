@@ -2,6 +2,7 @@ import os
 from repositories.MetricCatalogRepository import MetricCatalogRepository
 from repositories.impl.JsonMetricCatalogRepository import JSONMetricCatalogRepository
 from repositories.impl.CSVMetricCatalogRepository import CSVMetricCatalogRepository
+from repositories.impl.ExcelMetricCatalogRepository import ExcelMetricCatalogRepository
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -18,5 +19,8 @@ class CatalogRegistry:
             return JSONMetricCatalogRepository.from_env()
         elif source == "csv":
             return CSVMetricCatalogRepository.from_env()
+        elif source == "xlsx":
+            return ExcelMetricCatalogRepository.from_env()
+
         else:
             raise ValueError(f"Unsupported CATALOG_SOURCE: {source}")
