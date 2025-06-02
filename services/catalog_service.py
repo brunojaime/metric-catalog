@@ -8,3 +8,13 @@ class MetricCatalogService:
     def get_readable_catalog(self) -> str:
         metrics: List[Dict[str, str]] = self.repo.get_catalog()
         return "\n".join(f"{m['name']} - {m['description']}" for m in metrics)
+    
+
+    def get_metadata_fields(self) -> List[str]:
+        metrics: List[Dict[str, str]] = self.repo.get_catalog()
+        if not metrics:
+            return []
+        
+        # Assuming all metrics have the same metadata fields
+        return list(metrics[0].keys()) if metrics else []
+

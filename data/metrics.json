@@ -1,14 +1,56 @@
 [
   {
     "name": "Headcount",
-    "description": "Total number of active employees"
+    "description": "Total number of active employees",
+    "owner": "HR",
+    "team": "People Analytics",
+    "logic": "COUNT(employees WHERE status = 'active')",
+    "last_updated": "2024-12-01",
+    "frequency": "monthly"
   },
   {
     "name": "Attrition Rate",
-    "description": "Percentage of employees who left during a given period"
+    "description": "Percentage of employees who left during a given period",
+    "owner": "HR",
+    "team": "People Analytics",
+    "logic": "(leavers / average_headcount) * 100",
+    "last_updated": "2025-01-01",
+    "frequency": "quarterly"
   },
   {
     "name": "Revenue per Employee",
-    "description": "Total revenue divided by the number of employees"
+    "description": "Total revenue divided by the number of employees",
+    "owner": "Finance",
+    "team": "FP&A",
+    "logic": "SUM(revenue) / COUNT(employees)",
+    "last_updated": "2025-01-15",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Customer Churn Rate",
+    "description": "Percentage of customers lost in a period",
+    "owner": "Marketing",
+    "team": "Growth",
+    "logic": "(lost_customers / total_customers) * 100",
+    "last_updated": "2025-01-10",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Average Deal Size",
+    "description": "Average revenue per closed-won deal",
+    "owner": "Sales",
+    "team": "Revenue Operations",
+    "logic": "SUM(deal_value) / COUNT(deals)",
+    "last_updated": "2025-01-05",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Net Promoter Score",
+    "description": "Customer satisfaction index",
+    "owner": "CX",
+    "team": "Customer Experience",
+    "logic": "percentage(promoters) - percentage(detractors)",
+    "last_updated": "2025-01-20",
+    "frequency": "quarterly"
   }
 ]

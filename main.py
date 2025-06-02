@@ -9,7 +9,7 @@ from server import mcp
 def setup():
     repo = CatalogRegistry.resolve_repository()
     tools.catalog_service = MetricCatalogService(repo)
-
+                
 if __name__ == "__main__":
     setup()
     mcp.run(transport="sse")
