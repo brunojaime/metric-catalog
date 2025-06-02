@@ -1,0 +1,10 @@
+name,description
+Headcount,Total number of active employees
+Attrition Rate,Percentage of employees who left during a given period
+Revenue per Employee,Total revenue divided by the number of employees
+Total Starts,Total number of new hires in a given period
+Time to Fill,Average number of days to fill a job vacancy
+Time to Hire,Average number of days from job posting to offer acceptance
+Offer Acceptance Rate,Percentage of job offers accepted by candidates
+Time to Productivity,Average time taken for new hires to reach full productivity
+Employee Satisfaction,Average satisfaction score from employee surveys      

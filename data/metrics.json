@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Headcount",
+    "description": "Total number of active employees"
+  },
+  {
+    "name": "Attrition Rate",
+    "description": "Percentage of employees who left during a given period"
+  },
+  {
+    "name": "Revenue per Employee",
+    "description": "Total revenue divided by the number of employees"
+  }
+]
