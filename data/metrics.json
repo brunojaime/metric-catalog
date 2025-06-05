@@ -5,7 +5,7 @@
     "owner": "HR",
     "team": "People Analytics",
     "logic": "COUNT(employees WHERE status = 'active')",
-    "last_updated": "2024-12-01",
+    "Last Updated": "2024-12-01",
     "frequency": "monthly"
   },
   {
@@ -14,7 +14,7 @@
     "owner": "HR",
     "team": "People Analytics",
     "logic": "(leavers / average_headcount) * 100",
-    "last_updated": "2025-01-01",
+    "Last Updated": "2025-01-01",
     "frequency": "quarterly"
   },
   {
@@ -23,7 +23,7 @@
     "owner": "Finance",
     "team": "FP&A",
     "logic": "SUM(revenue) / COUNT(employees)",
-    "last_updated": "2025-01-15",
+    "Last Updated": "2025-01-15",
     "frequency": "monthly"
   },
   {
@@ -32,7 +32,7 @@
     "owner": "Marketing",
     "team": "Growth",
     "logic": "(lost_customers / total_customers) * 100",
-    "last_updated": "2025-01-10",
+    "Last Updated": "2025-01-10",
     "frequency": "monthly"
   },
   {
@@ -41,7 +41,7 @@
     "owner": "Sales",
     "team": "Revenue Operations",
     "logic": "SUM(deal_value) / COUNT(deals)",
-    "last_updated": "2025-01-05",
+    "Last Updated": "2025-01-05",
     "frequency": "monthly"
   },
   {
@@ -50,7 +50,7 @@
     "owner": "CX",
     "team": "Customer Experience",
     "logic": "percentage(promoters) - percentage(detractors)",
-    "last_updated": "2025-01-20",
+    "Last Updated": "2025-01-20",
     "frequency": "quarterly"
   }
 ]

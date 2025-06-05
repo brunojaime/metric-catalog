@@ -1,9 +1,9 @@
 import os
 import pandas as pd 
 from typing import List, Dict
-from repositories.MetricCatalogRepository import MetricCatalogRepository
+from repositories.MetricCatalogRepository.IMetricCatalogRepository import IMetricCatalogRepository
 
-class ExcelMetricCatalogRepository(MetricCatalogRepository):
+class ExcelMetricCatalogRepository(IMetricCatalogRepository):
     def __init__(self, file_path: str):
         self.file_path = file_path
 
@@ -20,3 +20,4 @@ class ExcelMetricCatalogRepository(MetricCatalogRepository):
     
     def get_metric_by_name(self, name):
         return super().get_metric_by_name(name)
+    

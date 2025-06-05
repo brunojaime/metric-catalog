@@ -1,9 +1,9 @@
 import json
 from typing import List, Dict,Optional
-from repositories.MetricCatalogRepository import MetricCatalogRepository
+from repositories.MetricCatalogRepository.IMetricCatalogRepository import IMetricCatalogRepository
 import os
 
-class JSONMetricCatalogRepository(MetricCatalogRepository):
+class JSONMetricCatalogRepository(IMetricCatalogRepository):
     def __init__(self, file_path: str):
         self.file_path = file_path
 

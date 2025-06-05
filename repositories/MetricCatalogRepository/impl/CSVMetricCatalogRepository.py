@@ -1,9 +1,9 @@
 import csv
 from typing import List, Dict
-from repositories.MetricCatalogRepository import MetricCatalogRepository
+from repositories.MetricCatalogRepository.IMetricCatalogRepository import IMetricCatalogRepository
 import os
 
-class CSVMetricCatalogRepository(MetricCatalogRepository):
+class CSVMetricCatalogRepository(IMetricCatalogRepository):
     def __init__(self, file_path: str):
         self.file_path = file_path
 

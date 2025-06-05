@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Last Update date in this Data Dictionary",
+        "description": "When the metadata for this metric was last updated.",
+        "type": "date"
+    },
+    {
+        "name": "Data Governance Validation",
+        "description": "Indicates if the metric was reviewed and approved by governance.",
+        "type": "boolean"
+    }
+]

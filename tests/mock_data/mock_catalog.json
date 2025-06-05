@@ -1,0 +1,12 @@
+[
+            {
+                "name": "Headcount",
+                "Business or Functional definition": "Total active employees",
+                "owner": "HR"
+            },
+            {
+                "name": "Attrition Rate",
+                "Business or Functional definition": "Percentage of employees who left",
+                "owner": "HR"
+            }
+    ]

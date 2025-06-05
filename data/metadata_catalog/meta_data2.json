@@ -1,0 +1,87 @@
+[
+  {
+    "attribute_id": "name",
+    "description": "The official name of the metric or data point.",
+    "type": "string",
+    "examples": ["Attrition Rate", "Headcount"],
+    "semantic_purpose": "identification",
+    "synonyms": ["metric_name", "title"],
+    "common_phrases": ["what is the metric", "name of this measure"],
+    "preferred_in_prompt": true,
+    "weight": 0.9,
+    "confusable_with": ["alias"],
+    "usage_notes": "Should be short and standardized.",
+    "example_questions": ["What is the name of this metric?"]
+  },
+  {
+    "attribute_id": "description",
+    "description": "A detailed explanation of what the metric represents.",
+    "type": "string",
+    "examples": ["Total active employees as of month-end"],
+    "semantic_purpose": "context",
+    "synonyms": ["definition", "business description"],
+    "common_phrases": ["what does this mean", "explain the metric"],
+    "preferred_in_prompt": true,
+    "weight": 0.8,
+    "confusable_with": ["logic"],
+    "usage_notes": "Focus on business interpretation, not technical details.",
+    "example_questions": ["What does this metric measure?"]
+  },
+  {
+    "attribute_id": "owner",
+    "description": "The person or team accountable for the accuracy and maintenance of the metric.",
+    "type": "string",
+    "examples": ["HR Analytics", "Finance"],
+    "semantic_purpose": "governance",
+    "synonyms": ["responsible_party", "data_responsible"],
+    "common_phrases": ["who manages this", "data steward"],
+    "preferred_in_prompt": false,
+    "weight": 0.7,
+    "confusable_with": ["Data Stewards"],
+    "usage_notes": "This is the accountable role, not necessarily the technical one.",
+    "example_questions": ["Who is responsible for this metric?"]
+  },
+  {
+    "attribute_id": "logic",
+    "description": "The formula or rule used to compute the metric.",
+    "type": "string",
+    "examples": ["COUNT(active_employees)"],
+    "semantic_purpose": "technical_definition",
+    "synonyms": ["formula", "calculation"],
+    "common_phrases": ["how is this calculated", "calculation logic"],
+    "preferred_in_prompt": false,
+    "weight": 0.6,
+    "confusable_with": ["description"],
+    "usage_notes": "Should reference fields and tables used in calculation.",
+    "example_questions": ["What is the logic behind this metric?"]
+  },
+  {
+    "attribute_id": "last_updated",
+
+    "description": "The last time this metadata was updated.",
+    "type": "date",
+    "examples": ["2024-05-01"],
+    "semantic_purpose": "metadata_freshness",
+    "synonyms": ["last_modified"],
+    "common_phrases": ["when was this updated", "last change"],
+    "preferred_in_prompt": false,
+    "weight": 0.4,
+    "confusable_with": ["data_refresh_date"],
+    "usage_notes": "Does not refer to data update, only documentation.",
+    "example_questions": ["When was this metadata last updated?"]
+  },
+  {
+    "attribute_id": "frequency",
+    "description": "How often the metric is refreshed or recalculated.",
+    "type": "string",
+    "examples": ["Monthly", "Quarterly"],
+    "semantic_purpose": "refresh_cycle",
+    "synonyms": ["update_interval", "cadence"],
+    "common_phrases": ["how often", "update schedule"],
+    "preferred_in_prompt": false,
+    "weight": 0.5,
+    "confusable_with": ["data_latency"],
+    "usage_notes": "Defines cadence, not real-time lag.",
+    "example_questions": ["How often is this metric updated?"]
+  }
+]

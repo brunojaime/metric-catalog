@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import List, Dict
 from typing import List, Dict, Optional
 
-class MetricCatalogRepository(ABC):
+class IMetricCatalogRepository(ABC):
     @abstractmethod
     def get_catalog(self) -> List[Dict[str, str]]:
         """Returns a list of metrics."""
