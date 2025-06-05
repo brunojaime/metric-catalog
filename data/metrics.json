@@ -4,53 +4,66 @@
     "description": "Total number of active employees",
     "owner": "HR",
     "team": "People Analytics",
+    "bip":0.8,
     "logic": "COUNT(employees WHERE status = 'active')",
     "Last Updated": "2024-12-01",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "manann_strategy_flag":"sum"
   },
   {
     "name": "Attrition Rate",
     "description": "Percentage of employees who left during a given period",
     "owner": "HR",
     "team": "People Analytics",
+    "bip":0.9,
     "logic": "(leavers / average_headcount) * 100",
     "Last Updated": "2025-01-01",
-    "frequency": "quarterly"
+    "frequency": "quarterly",
+    "manann_strategy_flag":"average"
   },
   {
     "name": "Revenue per Employee",
     "description": "Total revenue divided by the number of employees",
     "owner": "Finance",
     "team": "FP&A",
+    "bip":0.2,
     "logic": "SUM(revenue) / COUNT(employees)",
     "Last Updated": "2025-01-15",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "manann_strategy_flag":"average"
   },
   {
     "name": "Customer Churn Rate",
     "description": "Percentage of customers lost in a period",
     "owner": "Marketing",
     "team": "Growth",
+    "bip":0.4,
     "logic": "(lost_customers / total_customers) * 100",
     "Last Updated": "2025-01-10",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "manann_strategy_flag":"average"
+
   },
   {
     "name": "Average Deal Size",
     "description": "Average revenue per closed-won deal",
     "owner": "Sales",
     "team": "Revenue Operations",
+    "bip":0.5,
     "logic": "SUM(deal_value) / COUNT(deals)",
     "Last Updated": "2025-01-05",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "manann_strategy_flag":"average"
   },
   {
     "name": "Net Promoter Score",
     "description": "Customer satisfaction index",
     "owner": "CX",
     "team": "Customer Experience",
+    "bip":0.5,
     "logic": "percentage(promoters) - percentage(detractors)",
     "Last Updated": "2025-01-20",
-    "frequency": "quarterly"
+    "frequency": "quarterly",
+    "manann_strategy_flag":"custom"
   }
 ]

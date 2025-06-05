@@ -8,6 +8,17 @@ catalog_service : MetricCatalogService = None
 metadata_service: MetadataCatalogService = None
 catalog_introspection_service: CatalogIntrospectionService = CatalogIntrospectionService(catalog_service, metadata_service)
 
+@mcp.tool()
+def get_catalog() -> list[dict]:
+    """
+    Returns the entire metric catalog as a list of dictionaries.
+    Each dictionary represents a metric with its attributes.
+    """
+    try:
+        return catalog_service.get_catalog()
+    except ValueError as e:
+        return [f"Error: {str(e)}"]
+
 
 
 @mcp.tool()
@@ -21,7 +32,6 @@ def get_metric_catalog_fields() -> list[str]:
     except ValueError as e:
         return [f"Error: {str(e)}"]
 
-@mcp.tool()
 def get_attribute_metadata(attribute_name: str) -> dict:
     """
     Returns metadata details about a specific attribute (i.e., a field in the catalog), 

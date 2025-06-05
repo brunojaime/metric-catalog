@@ -1,4 +1,5 @@
 from factories import attribute_metadata_factory
+from repositories.AttributeMetadataRepository.impl.JsonAttributeMetadataRepository import JSONAttributeMetadataRepository
 from repositories.MetricCatalogRepository import IMetricCatalogRepository
 from repositories.AttributeMetadataRepository import IAttributeMetadataRepository
 from typing import List, Dict
@@ -14,12 +15,15 @@ class MetricCatalogService:
         self.repo_attributes =  repo_attributes
 
     
-    
-
-    def get_attribute_fields(self) -> list[str]:
+    def get_catalog(self) -> List[Dict[str, str]]:
         catalog = self.repo_catalog.get_catalog()
         if not catalog:
             raise ValueError("Metric catalog is empty")
+
+        return catalog
+    
+    def get_attribute_fields(self) -> list[str]:
+        catalog = self.get_catalog()
 
         fields = set()
         for item in catalog:
@@ -70,3 +74,19 @@ class MetricCatalogService:
             raise ValueError("Metadata cannot be empty.")
         metadata_attributes = attribute_metadata_factory(metadata)
         self.repo_attributes.save_attribute_metadata(metadata)
+
+
+        
+if __name__ == "__main__":
+    # Example usage
+    from repositories.MetricCatalogRepository.impl.JSONMetricCatalogRepository import JSONMetricCatalogRepository
+    from repositories.NormalizedCatalogRepository.impl.JSONNormalizedMetricCatalogRepository import JSONNormalizedMetricCatalogRepository
+
+    client_repo = JSONMetricCatalogRepository("data/metrics.json")
+    metadata_repo = JSONAttributeMetadataRepository("data/metadata/meta_data2.json")
+
+    service = MetricCatalogService(client_repo, metadata_repo)
+    
+    cata=service.get_catalog()
+    print(cata)
+    

@@ -14,6 +14,43 @@
     "example_questions": ["What is the name of this metric?"]
   },
   {
+  "attribute_id": "bip",
+  "description": "Represents the relative alignment of a metric's values across reporting entities and timeframes, used to flag latent fragmentation or interpretive drift.",
+  "type": "float",
+  "examples": [0.0, 0.25, 0.8, 1.0],
+  "semantic_purpose": "structural consistency scoring",
+  "synonyms": ["alignment_score", "context_consistency_factor"],
+  "common_phrases": ["inconsistent data across groups", "headcount doesn't line up", "fragmented metric"],
+  "preferred_in_prompt": false,
+  "weight": 0.2,
+  "confusable_with": ["data_quality_index", "reporting_scope"],
+  "usage_notes": "Primarily used to assess whether the metric (e.g., headcount) maintains logical coherence across business units, periods, or dimensions. Low values may indicate missing joins, shifted time windows, or filtered contexts.",
+  "example_questions": [
+    "Why is the headcount inconsistent between teams?",
+    "Is there a coherence issue in this report?",
+    "What's the gradient level for this metric?"
+  ]
+},
+
+  {
+  "attribute_id": "manann_strategy_flag",
+  "description": "Indicates how the metric should be aggregated across dimensions such as time, geography, or organization.",
+  "type": "string",
+  "examples": ["sum", "average", "latest_value", "custom"],
+  "semantic_purpose": "aggregation logic",
+  "synonyms": ["aggregation_method", "rollup_method"],
+  "common_phrases": ["how is this rolled up", "aggregation rule", "how to combine values"],
+  "preferred_in_prompt": false,
+  "weight": 0.6,
+  "confusable_with": ["calculation_method", "reporting_frequency"],
+  "usage_notes": "Useful for metrics that exist at multiple granularities and need a defined rollup behavior.",
+  "example_questions": [
+    "How is this metric rolled up?",
+    "What rollup strategy does this field use?",
+    "Is this aggregated using sum or average?"
+  ]
+},
+  {
     "attribute_id": "description",
     "description": "A detailed explanation of what the metric represents.",
     "type": "string",

@@ -5,5 +5,7 @@
   "logic": "logic",
   "name": "name",
   "owner": "owner",
-  "team": "team"
+  "team": "team",
+  "manann_strategy_flag": "manann_strategy_flag",
+  "bip": "bip"
 }

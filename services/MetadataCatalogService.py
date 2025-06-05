@@ -11,14 +11,14 @@ class MetadataCatalogService:
         self.repo_metadata = repo_metadata
         self.repo_normalized = repo_normalized_catalog
 
-    def get_metadata_fields(self) -> list[str]:
+    def get_metadata_fields(self) -> List[Dict[str, str]]:
         catalog = self.repo_metadata.get_all()
         if not catalog:
             raise ValueError("Metadata catalog is empty")
 
         # Suponiendo que cada dict tiene una key "name"
-        fields = [item["name"] for item in catalog if "name" in item]
-        return sorted(fields)
+        
+        return catalog
 
     def get_metadata_for_catalog_fields(self, field : str) -> Optional[Dict]:
         normalized_field = self.repo_normalized.get_attribute_by_name(field.strip().lower())
@@ -42,5 +42,6 @@ if __name__ == "__main__":
     repo_normalized = JSONNormalizedMetricCatalogRepository("data/metric_catalog.json")
 
     service = MetadataCatalogService(repo_metadata, repo_normalized)
-    get_metadata_fields = service.get_metadata_for_catalog_fields("Last Updated")
-    print(get_metadata_fields)
+    get_metadata_field = service.get_metadata_for_catalog_fields("Last Updated")
+    print(service.get_metadata_fields())
+    #print(get_metadata_field)
